@@ -13,20 +13,23 @@
   background-color: #f7f7f7;
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #0a3b7e;
-  color: white;
-  padding: 15px 30px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
+.nav-right {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+ .nav-right a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
 
-.logo {
-  font-weight: bold;
-  font-size: 18px;
-}
+.profile {
+      width: 40px;
+      height: 40px;
+      background-color: #e0e0e0;
+      border-radius: 50%;
+    }
 
 .menu a {
   color: white;
@@ -139,21 +142,28 @@ select {
   cursor: pointer;
   box-shadow: 0 4px 5px rgba(0,0,0,0.2);
 }
+header {
+      background-color: #003b8b;
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
 </style>
 <body>
-  <header class="navbar">
-    <div class="logo">JSRent</div>
-    <nav class="menu">
+<header>
+    <div><strong>JSRent</strong></div>
+    <div class="nav-right">
       <a href="#">Home</a>
       <a href="#">Sewa Motor</a>
-      <div class="avatar"></div>
-    </nav>
+      <div class="profile"></div>
+    </div>
   </header>
 
   <div class="form-header">
     <div class="form-box">Form Penyewaan</div>
-    <h3>Honda Vario 125</h3>
-    <a href="#" class="nopol">XZ 1247 YY</a>
   </div>
 
   <main class="form-container">
@@ -205,8 +215,10 @@ select {
   </main>
 
   <div class="button-container">
-    <button class="btn-lanjut">Lanjutkan</button>
+    <a href="pembayaran.php" class="btn-lanjut">Lanjutkan</a>
   </div>
 </body>
 </html>
+
+
 
