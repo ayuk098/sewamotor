@@ -10,29 +10,29 @@
       background-color: #f5f5f5;
     }
     .login-card {
-    border-radius: 15px;
-    padding: 2rem;
-    position: relative;
-    background-color: white;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-    z-index: 1;
-    border: 1.5px solid  #0a3b7e;
-  }
-  .login-icon {
-    width: 80px;
-    height: 80px;
-    background: linear-gradient(to right, #0F4181, #0dcaf0);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: -40px;
-    left: 50%;
-    transform: translateX(-50%);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    z-index: 10;
-  }
+      border-radius: 15px;
+      padding: 2rem;
+      position: relative;
+      background-color: white;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      z-index: 1;
+      border: 1.5px solid #0a3b7e;
+    }
+    .login-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(to right, #0F4181, #0dcaf0);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      z-index: 10;
+    }
     .login-icon img {
       width: 40px;
       height: 40px;
@@ -47,11 +47,15 @@
       box-shadow: 0 -8px 20px rgba(0,0,0,0.1);
       border-bottom-left-radius: 40px;
       border-bottom-right-radius: 40px;
-      border: 1.5px solid  #0a3b7e;
+      border: 1.5px solid #0a3b7e;
+      margin-top: 15px; /* Menambahkan jarak antara login card dan button */
     }
-    
     .form-control {
-      border: 1.5px solid  #0a3b7e;
+      border: 1.5px solid #0a3b7e;
+    }
+    /* Untuk memastikan form dan button tidak ada jarak tambahan */
+    .form-group, .login-card {
+      margin-bottom: 0;
     }
   </style>
 </head>
