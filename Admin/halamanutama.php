@@ -40,14 +40,14 @@ $pendapatan_bulanan = mysqli_query($connect, "
     ORDER BY tanggal_bayar DESC 
     LIMIT 3
 ");
-// Pelanggan setia (top 5)
+// Pelanggan setia (top 3)
 $pelanggan_setia = mysqli_query($connect, "
     SELECT c.nama, COUNT(p.id_penyewaan) as total_sewa
     FROM penyewaan p 
     JOIN customer c ON p.id_customer = c.id_customer 
     GROUP BY p.id_customer 
     ORDER BY total_sewa DESC 
-    LIMIT 5
+    LIMIT 3
 ");
 // Kendaraan Terlaris
 $kendaraan_terlaris = mysqli_fetch_assoc(mysqli_query($connect, "
@@ -133,15 +133,15 @@ $kendaraan_terlaris = mysqli_fetch_assoc(mysqli_query($connect, "
   }
 
   .stat-card {
-  display: flex; /* Gunakan Flexbox */
-  justify-content: space-between; /* Posisikan elemen di kiri dan kanan */
-  align-items: center; /* Pusatkan elemen secara vertikal */
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
   background: #fff;
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
-  text-align: left; /* Pastikan teks berada di kiri */
+  text-align: left; 
   color: #6c757d;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -165,8 +165,8 @@ $kendaraan_terlaris = mysqli_fetch_assoc(mysqli_query($connect, "
   }
 
   .stat-icon {
-  font-size: 1.5rem; /* Ukuran ikon */
-  margin-left: auto; /* Pindahkan ke kanan */
+  font-size: 1.5rem;
+  margin-left: auto;
   color: #FFA500;
 }
 
@@ -268,18 +268,18 @@ $kendaraan_terlaris = mysqli_fetch_assoc(mysqli_query($connect, "
         <a href="kendaraan/halutkendaraan.php"><i class="fas fa-tools"></i>Kendaraan</a>
       </div>
 
-<!-- Foto Admin -->
+
 <div class="admin-profile">
       <a href="biodata_admin.php">
         <img src="admin.jpg" alt="Admin Profile" title="Profil Admin">
       </a>
       </div>
-<!-- Main Content -->
+
     <div class="main-content">
       <h1 class="page-title">Dashboard</h1>  
-<!-- Statistik Utama -->
+
 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 mb-4">
-  <!-- Card 1: Jumlah Kendaraan -->
+  
   <div class="col">
     <a href="kendaraan/halutkendaraan.php" style="text-decoration: none;">
       <div class="stat-card">
@@ -294,7 +294,7 @@ $kendaraan_terlaris = mysqli_fetch_assoc(mysqli_query($connect, "
     </a>
   </div>
 
-  <!-- Card 2: Pelanggan Hari Ini -->
+
   <div class="col">
     <div class="stat-card">
       <div>
@@ -307,7 +307,7 @@ $kendaraan_terlaris = mysqli_fetch_assoc(mysqli_query($connect, "
     </div>
   </div>
 
-  <!-- Card 3: Total Pendapatan -->
+
   <div class="col">
     <a href="pembayaran/halutpembayaran.php" style="text-decoration: none;">
       <div class="stat-card">
@@ -322,7 +322,7 @@ $kendaraan_terlaris = mysqli_fetch_assoc(mysqli_query($connect, "
     </a>
   </div>
 
-  <!-- Card 4: Jumlah Pelanggan -->
+ 
   <div class="col">
     <a href="customer/halamanutama.php" style="text-decoration: none;">
       <div class="stat-card">
@@ -341,7 +341,7 @@ $kendaraan_terlaris = mysqli_fetch_assoc(mysqli_query($connect, "
 
 <div class="container mt-4">
   <div class="row row-cols-1 row-cols-md-2 g-4">
-    <!-- Card 1: Transaksi Pembayaran -->
+   
     <div class="col">
       <div class="card">
         <div class="card-body">
@@ -368,7 +368,7 @@ $kendaraan_terlaris = mysqli_fetch_assoc(mysqli_query($connect, "
       </div>
     </div>
 
-    <!-- Card 3: Pelanggan Setia -->
+   
     <div class="col">
       <div class="card">
         <div class="card-body">
@@ -393,7 +393,7 @@ $kendaraan_terlaris = mysqli_fetch_assoc(mysqli_query($connect, "
       </div>
     </div>
 
-    <!-- Card 2: Pendapatan Perbulan -->
+    
     <div class="col">
       <div class="card">
         <div class="card-body">
@@ -418,7 +418,7 @@ $kendaraan_terlaris = mysqli_fetch_assoc(mysqli_query($connect, "
       </div>
     </div>
     
-    <!-- Card 4: Kendaraan Terlaris -->
+  
     <div class="col">
       <a href="penyewaan/halutpenyewaan.php" style="text-decoration: none;">
         <div class="stat-card">
