@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rental Motor JSRent</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #003b8b;
+      --secondary-color: #ffc107;
+      --accent-color: #e03131;
+      --light-color: #f8f9fa;
+      --dark-color: #212529;
+      --gray-color: #6c757d;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--light-color);
+      color: var(--dark-color);
+      line-height: 1.6;
+    }
+    
+    /* HEADER */
+    header {
+      background-color: #fff;
+      padding: 1rem 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    
+    .navbar-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+    
+    .logo i {
+      margin-right: 10px;
+      color: var(--secondary-color);
+    }
+    
+    .nav-menu {
+      display: flex;
+      gap: 1.5rem;
+    }
+    
+    .nav-link {
+      color: var(--primary-color) !important;
+      font-weight: 500;
+      position: relative;
+      padding: 0.5rem 0;
+      transition: color 0.3s ease;
+    }
+    
+    .nav-link:hover {
+      color: var(--accent-color) !important;
+    }
+    
+    .nav-link.active {
+      color: var(--accent-color) !important;
+    }
+    
+    .nav-link.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: var(--accent-color);
+      border-radius: 3px;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, rgba(0,59,139,0.9), rgba(0,59,139,0.7));
+      color: #fff;
+      text-align: center;
+      padding: 8rem 2rem;
+      margin-bottom: 1rem;
+    }
+    
+    .hero .tagline {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .hero .tagline h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    
+    .hero .tagline p {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+    
+    .hero .tagline span {
+      color: var(--secondary-color);
+      font-weight: 600;
+    }
+    
+    .hero-images {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      max-width: 1000px;
+      transform: translate(-50%, -50%);
+      opacity: 0.50;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      pointer-events: none;
+    }
+    
+    .hero-images img {
+      max-width: 46%;
+      height: auto;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+    }
+    
+    .cta-button {
+      display: inline-block;
+      background-color: var(--secondary-color);
+      color: var(--primary-color);
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      background-color: #ffca28;
+    }
+
+    /* ABOUT PREVIEW */
+    .about-preview {
+      padding: 4rem 0;
+      background-color: #fff;
+    }
+    
+    .about-preview .container {
+      max-width: 1000px;
+    }
+    
+    .about-preview h2 {
+      color: var(--primary-color);
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    
+    .about-preview p {
+      color: var(--gray-color);
+      margin-bottom: 2rem;
+      text-align: center;
+      font-size: 1.1rem;
+    }
+
+
+    /* FEATURES */
+    .features {
+      padding: 4rem 0;
+      background-color: var(--light-color);
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .section-title h2 {
+      color: var(--primary-color);
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    
+    .section-title .subtitle {
+      color: var(--gray-color);
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .feature-card {
+      border: none;
+      border-radius: 12px;
+      padding: 2rem 1.5rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+      height: 100%;
+      background-color: #fff;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    
+    .feature-icon {
+      width: 80px;
+      height: 80px;
+      background-color: rgba(0,59,139,0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+    }
+    
+    .feature-icon img {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+    }
+    
+    .feature-card .card-title {
+      font-size: 1.25rem;
+      color: var(--primary-color);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    
+    .feature-card .card-text {
+      color: var(--gray-color);
+      font-size: 1rem;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: var(--primary-color);
+      color: #fff;
+      padding: 4rem 0 2rem;
+    }
+    
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    .footer-logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 1.5rem;
+      display: inline-block;
+    }
+    
+    .footer-logo span {
+      color: var(--secondary-color);
+    }
+    
+    .footer-about {
+      margin-bottom: 2rem;
+    }
+    
+    .footer-about p {
+      opacity: 0.8;
+      margin-bottom: 1.5rem;
+    }
+    
+    .footer-links h5,
+    .footer-contact h5 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+    
+    .footer-links h5::after,
+    .footer-contact h5::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 50px;
+      height: 2px;
+      background-color: var(--secondary-color);
+    }
+    
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .footer-links li {
+      margin-bottom: 0.8rem;
+    }
+    
+    .footer-links a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+      color: var(--secondary-color);
+      padding-left: 5px;
+    }
+    
+    .footer-contact p {
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: flex-start;
+    }
+    
+    .footer-contact i {
+      margin-right: 10px;
+      color: var(--secondary-color);
+      margin-top: 3px;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      color: #fff;
+      transition: all 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      background-color: var(--secondary-color);
+      color: var(--primary-color);
+      transform: translateY(-3px);
+    }
+    
+    .copyright {
+      text-align: center;
+      padding-top: 2rem;
+      margin-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      opacity: 0.8;
+      font-size: 0.9rem;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 992px) {
+      .hero .tagline h1 {
+        font-size: 2.4rem;
+      }
+      
+      .hero .tagline p {
+        font-size: 1.1rem;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .hero {
+        padding: 4rem 1rem;
+      }
+      
+      .hero .tagline h1 {
+        font-size: 2rem;
+      }
+      
+      .section-title h2 {
+        font-size: 1.8rem;
+      }
+      
+      .feature-card {
+        padding: 1.5rem 1rem;
+      }
+      
+      .hero-images img {
+        max-width: 60%;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .logo {
+        font-size: 1.5rem;
+      }
+      
+      .hero .tagline h1 {
+        font-size: 1.8rem;
+      }
+      
+      .nav-menu {
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="navbar-container d-flex justify-content-between align-items-center">
+      <a href="index.php" class="logo">
+        <i class="fas fa-motorcycle"></i> JSRent
+      </a>
+      <nav class="nav-menu">
+        <a href="index.php" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">Tentang Kami</a>
+        <a href="#footer" class="nav-link">Kontak</a>
+        <a href="daftar.php" class="nav-link">Daftar</a>
+        <a href="login.php" class="nav-link">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <!-- background images -->
+    <div class="hero-images">
+      <img src="logoindex/scoopy.png" alt="Scoopy" class="img-left">
+      <img src="logoindex/filano.png" alt="Filano" class="img-right">
+    </div>
+    <!-- tagline -->
+    <div class="tagline">
+      <h1>Teman Perjalanan <span>TERPERCAYA</span> Anda</h1>
+      <p>Pilihan <span>CERDAS</span>, Perjalanan <span>TUNTAS</span> dengan kenyamanan maksimal</p>
+      <a href="login.php" class="cta-button">Sewa Sekarang</a>
+    </div>
+  </section>
+
+  <!-- ABOUT PREVIEW -->
+  <about id="about">
+  <section class="about-preview">
+    <div class="container">
+      <h2>JSRent - Solusi Rental Motor Terpercaya di Ngampilan, Yogyakarta</h2>
+      <p>Menjelajahi indahnya Yogyakarta kini semakin mudah dan praktis bersama JSRent, layanan rental motor profesional yang hadir untuk mendukung setiap langkah perjalanan Anda di kota budaya ini. Terletak di Ngampilan, kawasan strategis di jantung Kota Yogyakarta, JSRent menjadi pilihan ideal bagi siapa pun yang ingin merasakan kenyamanan dan kebebasan berkendara di tengah hiruk-pikuk wisata maupun aktivitas sehari-hari.</p>
+      <p>Kami memahami bahwa setiap perjalanan memiliki kebutuhan yang berbeda—mulai dari pelancong yang ingin mengeksplorasi keindahan Malioboro dan Candi Prambanan, mahasiswa yang memerlukan transportasi harian menuju kampus, hingga pekerja dan penduduk lokal yang membutuhkan kendaraan efisien untuk rutinitas mereka. Oleh karena itu, JSRent hadir dengan solusi mobilitas yang fleksibel, praktis, dan ramah di kantong, namun tetap mengedepankan kualitas pelayanan dan keamanan kendaraan.</p>
+    </div>
+  </section>
+  </about>
+
+  <!-- FEATURES -->
+  <section class="features">
+    <div class="container">
+      <div class="section-title">
+        <h2>Fasilitas Lengkap &amp; Dukungan Maksimal</h2>
+        <p class="subtitle">Setiap motor yang Anda sewa dilengkapi dengan fasilitas lengkap dan dukungan layanan terbaik untuk perjalanan Anda</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-card text-center">
+            <div class="feature-icon">
+              <img src="logoindex/helm.png" alt="2 Helm Standar SNI">
+            </div>
+            <h5 class="card-title">2 Helm Standar SNI</h5>
+            <p class="card-text">Untuk kenyamanan dan keselamatan Anda dan pasangan berkendara dengan helm berkualitas tinggi.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-card text-center">
+            <div class="feature-icon">
+              <img src="logoindex/jas_hujan.png" alt="Jas Hujan">
+            </div>
+            <h5 class="card-title">Jas Hujan Premium</h5>
+            <p class="card-text">Tetap bisa bepergian dengan nyaman meski cuaca tak bersahabat dengan jas hujan berkualitas.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-card text-center">
+            <div class="feature-icon">
+              <img src="logoindex/free.png" alt="Free Delivery">
+            </div>
+            <h5 class="card-title">Gratis Antar Jemput</h5>
+            <p class="card-text">Kami antar motor ke lokasi Anda (dalam radius 10 km dari lokasi kami) tanpa biaya tambahan.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="feature-card text-center">
+            <div class="feature-icon">
+              <img src="logoindex/waktu.png" alt="Layanan 24 Jam">
+            </div>
+            <h5 class="card-title">Layanan 24 Jam</h5>
+            <p class="card-text">Tim kami siap membantu 24 jam selama masa sewa untuk memastikan perjalanan lancar.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="footer-container">
+      <div class="row">
+        <div class="col-lg-4 mb-5 mb-lg-0">
+          <a href="index.php" class="footer-logo">JS<span>Rent</span></a>
+          <div class="footer-about">
+            <p>JSRent menyediakan layanan rental motor terbaik di Yogyakarta dengan armada terawat dan pelayanan profesional.</p>
+            <div class="social-links">
+              <a href="https://instagram.com/rental_motorjogja" target="_blank"><i class="fab fa-instagram"></i></a>
+              <a href="https://tiktok.com/@JS_RENT" target="_blank"><i class="fab fa-tiktok"></i></a>
+              <a href="https://wa.me/62895355925544" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+          <div class="footer-links">
+            <h5>Menu</h5>
+            <ul>
+              <li><a href="index.php">Home</a></li>
+              <li><a href="#about">Tentang Kami</a></li>
+              <li><a href="#footer">Kontak</a></li>
+              <li><a href="daftar.php">Daftar</a></li>
+              <li><a href="login.php">Login</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <div class="footer-links">
+            <h5>Layanan</h5>
+            <ul>
+              <li><a href="#">Rental Harian</a></li>
+              <li><a href="#">Rental Mingguan</a></li>
+              <li><a href="#">Antar Jemput Stasiun</a></li>
+              <li><a href="#">Tour Guide</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="footer-contact">
+            <h5>Kontak Kami</h5>
+            <p><i class="fas fa-map-marker-alt"></i> Ngampilan, Kota Yogyakarta, 55261</p>
+            <p><i class="fas fa-phone-alt"></i> <a href="tel:+62895355925544">0895 3559 25544</a></p>
+            <p><i class="fas fa-envelope"></i> <a href="mailto:jsrent@gmail.com">jsrent@gmail.com</a></p>
+            <p><i class="fas fa-clock"></i> Buka 24 Jam Setiap Hari</p>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        &copy; 2025 JSRent. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
