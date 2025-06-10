@@ -1,10 +1,9 @@
 <?php
-include 'koneksi.php'; // Pastikan file koneksi ke database sudah ada
+include 'koneksi.php'; 
 
-// Cek apakah ada input pencarian
 $search = isset($_GET['search']) ? trim($_GET['search']) : '';
 
-// Query untuk mengambil data kendaraan dengan filter pencarian
+
 $query = "SELECT id_kendaraan, nama, gambar_kendaraan, merk, harga_sewa, status FROM kendaraan";
 if ($search !== '') {
     $query .= " WHERE nama LIKE '%" . mysqli_real_escape_string($connect, $search) . "%'";
@@ -19,7 +18,7 @@ if (empty($_SESSION['id_customer'])) {
     exit();
 }
 
-// Data pelanggan
+
 $nama = $_SESSION['nama'];
 ?>
 
@@ -118,61 +117,61 @@ $nama = $_SESSION['nama'];
     }
     .motor-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr); /* 4 card per baris */
-      gap: 24px; /* Jarak antar card */
+      grid-template-columns: repeat(4, 1fr); 
+      gap: 24px; 
     }
     .motor-card {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       background: white;
-      border: 2px solid #0F4181; /* Warna garis pinggir */
+      border: 2px solid #0F4181; 
       border-radius: 10px;
       padding: 16px;
       text-align: center;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Bayangan ringan */
-      transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animasi hover */
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+      transition: transform 0.3s ease, box-shadow 0.3s ease; 
     }
     .motor-card:hover {
-      transform: translateY(-5px); /* Efek hover */
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Bayangan lebih besar saat hover */
+      transform: translateY(-5px); 
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
     }
     .motor-card img {
       width: 100%;
       height: 130px;
-      object-fit: contain; /* Menyesuaikan gambar */
+      object-fit: contain; 
       margin-bottom: 10px;
     }
     .motor-card .nama {
       font-size: 18px;
       font-weight: bold;
-      color: #0F4181; /* Warna nama motor */
+      color: #0F4181; 
       margin-bottom: 8px;
     }
     .motor-card .merk {
-      color: #1E90FF; /* Warna biru */
+      color: #1E90FF;
       font-size: 14px;
       margin: 4px 0;
     }
     .motor-card .harga {
       font-weight: bold;
-      color: #000; /* Warna hitam */
+      color: #000; 
       font-size: 16px;
     }
     .motor-card .waktu {
-      color: #0F4181; /* Warna biru tua */
+      color: #0F4181; 
       font-size: 14px;
       font-weight: bold;
     }
     .motor-card .info-bottom {
-      display: flex; /* Menggunakan Flexbox */
-      justify-content: space-between; /* Elemen tersebar: kiri dan kanan */
-      align-items: center; /* Menyelaraskan elemen secara vertikal */
-      margin-top: auto; /* Memindahkan elemen ke bagian bawah card */
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      margin-top: auto; 
     }
     .motor-card .info-bottom div {
-      flex: 1; /* Membuat div mengambil ruang yang tersedia */
-      text-align: left; /* Menyelaraskan teks ke kiri */
+      flex: 1; 
+      text-align: left;
     }
     .motor-card .status {
       font-size: 14px;
@@ -180,10 +179,10 @@ $nama = $_SESSION['nama'];
       margin-top: 4px;
     }
     .motor-card .status.tersedia {
-      color: green; /* Warna hijau untuk status tersedia */
+      color: green; 
     }
     .motor-card .status.tidak-tersedia {
-      color: red; /* Warna merah untuk status tidak tersedia */
+      color: red;
     }
     .motor-card .sewa-button {
       display: inline-block;
@@ -195,10 +194,10 @@ $nama = $_SESSION['nama'];
       cursor: pointer;
       font-weight: 500;
       text-align: center;
-      width: auto; /* Tombol hanya selebar teks */
+      width: auto; 
     }
     .motor-card .sewa-button:hover {
-      background-color: #e0b806; /* Warna tombol saat hover */
+      background-color: #e0b806; 
     }
   </style>
 </head>
