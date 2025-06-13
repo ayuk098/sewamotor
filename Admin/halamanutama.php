@@ -330,101 +330,101 @@ $kendaraan_terlaris = mysqli_fetch_assoc(mysqli_query($connect, "
   </div>
 </div>
 <div class="card-container">
-
-<div class="container mt-4">
-  <div class="row row-cols-1 row-cols-md-2 g-4">
-      <div class="card">
-        <div class="card-body">
-          <h5 style="color:orange;">Transaksi Pembayaran</h5>
-          <table class="card-table">
-            <thead>
-              <tr>
-                <th>Metode</th>
-                <th>Tahun</th>
-                <th>Total</th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php while ($row = mysqli_fetch_assoc($transaksi_pembayaran)) { ?>
-              <tr>
-                <td><?= $row['metode_bayar'] ?></td>
-                <td><?= $row['tahun'] ?></td>
-                <td>Rp <?= number_format($row['total'], 0, ',', '.') ?></td>
-              </tr>
-              <?php } ?>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-
-   
-    <div class="col">
-      <div class="card">
-        <div class="card-body">
-          <h5 style="color:orange;">Pelanggan Setia</h5>
-          <table class="card-table">
-            <thead>
-              <tr>
-                <th>Nama</th>
-                <th>Total Sewa</th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php while ($row = mysqli_fetch_assoc($pelanggan_setia)) { ?>
-              <tr>
-                <td><?= htmlspecialchars($row['nama']) ?></td>
-                <td><?= $row['total_sewa'] ?> kali</td>
-              </tr>
-              <?php } ?>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card">
-        <div class="card-body">
-          <h5 style="color:orange;">Pendapatan Perbulan</h5>
-          <table class="card-table">
-            <thead>
-              <tr>
-                <th>Bulan</th>
-                <th>Total</th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php while ($row = mysqli_fetch_assoc($pendapatan_bulanan)) { ?>
-              <tr>
-                <td><?= $row['bulan'] ?></td>
-                <td>Rp <?= number_format($row['total'], 0, ',', '.') ?></td>
-              </tr>
-              <?php } ?>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-    <div class="col">
-      <a href="penyewaan/halutpenyewaan.php" style="text-decoration: none;">
-        <div class="stat-card">
-          <div>
-            <h3>Kendaraan Terlaris</h3>
-            <h2><?= htmlspecialchars($kendaraan_terlaris['nama_kendaraan']) ?></h2>
-            <p style="color: #6c757d; font-size: 0.9rem;">Disewa <?= $kendaraan_terlaris['total_sewa'] ?> kali</p>
-          </div>
-          <div class="stat-icon">
-            <i class="fas fa-motorcycle"></i>
+  <div class="container mt-4">
+    <!-- Baris pertama -->
+    <div class="row row-cols-1 row-cols-md-2 g-4 mb-4">
+      <div class="col">
+        <div class="card">
+          <div class="card-body">
+            <h5 style="color:orange;">Transaksi Pembayaran</h5>
+            <table class="card-table">
+              <thead>
+                <tr>
+                  <th>Metode</th>
+                  <th>Tahun</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php while ($row = mysqli_fetch_assoc($transaksi_pembayaran)) { ?>
+                <tr>
+                  <td><?= $row['metode_bayar'] ?></td>
+                  <td><?= $row['tahun'] ?></td>
+                  <td>Rp <?= number_format($row['total'], 0, ',', '.') ?></td>
+                </tr>
+                <?php } ?>
+              </tbody>
+            </table>
           </div>
         </div>
-      </a>
+      </div>
+      <div class="col">
+        <div class="card">
+          <div class="card-body">
+            <h5 style="color:orange;">Pelanggan Setia</h5>
+            <table class="card-table">
+              <thead>
+                <tr>
+                  <th>Nama</th>
+                  <th>Total Sewa</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php while ($row = mysqli_fetch_assoc($pelanggan_setia)) { ?>
+                <tr>
+                  <td><?= htmlspecialchars($row['nama']) ?></td>
+                  <td><?= $row['total_sewa'] ?> kali</td>
+                </tr>
+                <?php } ?>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Baris kedua -->
+    <div class="row row-cols-1 row-cols-md-2 g-4 mb-4">
+      <div class="col">
+        <div class="card">
+          <div class="card-body">
+            <h5 style="color:orange;">Pendapatan Perbulan</h5>
+            <table class="card-table">
+              <thead>
+                <tr>
+                  <th>Bulan</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php while ($row = mysqli_fetch_assoc($pendapatan_bulanan)) { ?>
+                <tr>
+                  <td><?= $row['bulan'] ?></td>
+                  <td>Rp <?= number_format($row['total'], 0, ',', '.') ?></td>
+                </tr>
+                <?php } ?>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <a href="penyewaan/halutpenyewaan.php" style="text-decoration: none;">
+          <div class="stat-card">
+            <div>
+              <h3>Kendaraan Terlaris</h3>
+              <h2><?= htmlspecialchars($kendaraan_terlaris['nama_kendaraan']) ?></h2>
+              <p style="color: #6c757d; font-size: 0.9rem;">Disewa <?= $kendaraan_terlaris['total_sewa'] ?> kali</p>
+            </div>
+            <div class="stat-icon">
+              <i class="fas fa-motorcycle"></i>
+            </div>
+          </div>
+        </a>
+      </div>
     </div>
   </div>
 </div>
-      </div>
-    </div>
-  </body>
-</html>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
