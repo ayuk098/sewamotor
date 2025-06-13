@@ -1,0 +1,3 @@
+[submodule "sewamotor"]
+    path = sewamotor
+    url = https://github.com/username/sewamotor.git
