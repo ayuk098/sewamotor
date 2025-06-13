@@ -278,7 +278,6 @@ $kendaraan_terlaris = mysqli_fetch_assoc(mysqli_query($connect, "
       <h1 class="page-title">Dashboard</h1>  
 
 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 mb-4">
-
   <div class="col">
     <a href="kendaraan/halutkendaraan.php" style="text-decoration: none;">
       <div class="stat-card">
@@ -292,8 +291,6 @@ $kendaraan_terlaris = mysqli_fetch_assoc(mysqli_query($connect, "
       </div>
     </a>
   </div>
-
-  
   <div class="col">
     <div class="stat-card">
       <div>
@@ -305,8 +302,6 @@ $kendaraan_terlaris = mysqli_fetch_assoc(mysqli_query($connect, "
       </div>
     </div>
   </div>
-
- 
   <div class="col">
     <a href="pembayaran/halutpembayaran.php" style="text-decoration: none;">
       <div class="stat-card">
@@ -320,8 +315,6 @@ $kendaraan_terlaris = mysqli_fetch_assoc(mysqli_query($connect, "
       </div>
     </a>
   </div>
-
-  
   <div class="col">
     <a href="customer/halamanutama.php" style="text-decoration: none;">
       <div class="stat-card">
@@ -340,8 +333,6 @@ $kendaraan_terlaris = mysqli_fetch_assoc(mysqli_query($connect, "
 
 <div class="container mt-4">
   <div class="row row-cols-1 row-cols-md-2 g-4">
-    
-    <div class="col">
       <div class="card">
         <div class="card-body">
           <h5 style="color:orange;">Transaksi Pembayaran</h5>
@@ -391,8 +382,6 @@ $kendaraan_terlaris = mysqli_fetch_assoc(mysqli_query($connect, "
         </div>
       </div>
     </div>
-
-  
     <div class="col">
       <div class="card">
         <div class="card-body">
@@ -416,8 +405,6 @@ $kendaraan_terlaris = mysqli_fetch_assoc(mysqli_query($connect, "
         </div>
       </div>
     </div>
-    
-    
     <div class="col">
       <a href="penyewaan/halutpenyewaan.php" style="text-decoration: none;">
         <div class="stat-card">
