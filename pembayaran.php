@@ -495,7 +495,7 @@ $show_popup = true; // Set variabel untuk menampilkan pop-up
 <script>
   function closePopup() {
     document.getElementById('popup').classList.remove('active');
-    window.location.href = 'index.html'; // Redirect ke halaman index.php
+    window.location.href = 'index.html'; 
   }
 </script>
 <script>

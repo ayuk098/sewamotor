@@ -14,7 +14,7 @@ $result = mysqli_query($connect, $query);
 <?php
 session_start();
 if (empty($_SESSION['id_customer'])) {
-    header("Location: login.php?pesan=belum_login");
+    header("Location: login.html?pesan=belum_login");
     exit();
 }
 

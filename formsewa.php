@@ -4,7 +4,7 @@ include 'koneksi.php';
 
 // Pastikan pengguna sudah login
 if (!isset($_SESSION['id_customer'])) {
-    header("Location: login.php?pesan=belum_login");
+    header("Location: login.html?pesan=belum_login");
     exit();
 }
 
