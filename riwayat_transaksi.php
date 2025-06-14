@@ -209,17 +209,75 @@ if (!$result_transaksi) {
       font-size: 1rem;
       margin-top: 1rem;
     }
+
+  @media (max-width: 992px) {
+    .container {
+      flex-direction: column; 
+      gap: 1rem;
+    }
+
+    .sidebar {
+      width:
+    }
+
+    .main-content {
+      width: 
+    }
+  }
+
+ 
+  @media (max-width: 768px) {
+    header {
+    padding: 1rem; 
+    }
+    .nav-right {
+      gap: 1rem;
+    }
+
+    .table-container {
+      overflow-x: auto; 
+    }
+
+    h1 {
+      font-size: 1.25rem; 
+    }
+
+    h2 {
+      font-size: 1rem; 
+    }
+  }
+
+  
+  @media (max-width: 576px) {
+    header {
+      padding: 1rem; 
+    }
+
+    .sidebar h2 {
+      font-size: 1rem;
+    }
+
+    table th, table td {
+      font-size: 0.75rem; 
+      padding: 0.5rem; 
+    }
+
+    .status {
+      font-size: 0.75rem; 
+    }
+  }
   </style>
 </head>
 <body>
 <header>
-  <a class="logo">JSRent</a>
+  <a href="#" class="logo">JSRent</a>
   <div class="nav-right">
     <a href="index.html"><i class="fas fa-home"></i> Home</a>
     <a href="daftarmotor.php"><i class="fas fa-motorcycle"></i> Sewa Motor</a>
-    <a href="Logout.php"><i class="fas fa-user"></i> Logout</a>
+    <a href="logout.php"><i class="fas fa-user"></i> Logout </a>
   </div>
 </header>
+
 
 <div class="container">
   <!-- Sidebar -->

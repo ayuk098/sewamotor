@@ -258,7 +258,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       .container {
         flex-direction: column;
       }
-      
+      header {
+      padding: 1rem; 
+      }
+      .nav-right {
+      gap: 1rem;
+    }
       .sidebar {
         width: 100%;
       }
@@ -280,7 +285,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <div class="nav-right">
     <a href="index.html"><i class="fas fa-home"></i> Home</a>
     <a href="daftarmotor.php"><i class="fas fa-motorcycle"></i> Sewa Motor</a>
-    <a href="Logout.php"><i class="fas fa-user"></i> Logout</a>
+    <a href="logout.php"><i class="fas fa-user"></i> Logout</a>
   </div>
 </header>
 

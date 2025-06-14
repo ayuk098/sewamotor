@@ -382,6 +382,13 @@ $show_popup = true; // Set variabel untuk menampilkan pop-up
         grid-template-columns: 1fr;
       }
       
+      header {
+      padding: 1rem;
+    }
+  
+      .nav-right {
+      gap: 1rem;
+    }
     }
   </style>
 </head>
@@ -390,7 +397,7 @@ $show_popup = true; // Set variabel untuk menampilkan pop-up
   <a href="#" class="logo">JSRent</a>
   <div class="nav-right">
     <a href="index.html"><i class="fas fa-home"></i> Home</a>
-    <a href="sewamotor.php"><i class="fas fa-motorcycle"></i> Sewa Motor</a>
+    <a href="daftarmotor.php"><i class="fas fa-motorcycle"></i> Sewa Motor</a>
     <a href="profil_customer.php" class="profile">
       <i class="fas fa-user"></i>
     </a>

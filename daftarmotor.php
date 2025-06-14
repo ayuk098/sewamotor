@@ -199,6 +199,36 @@ $nama = $_SESSION['nama'];
     .motor-card .sewa-button:hover {
       background-color: #e0b806; 
     }
+
+  @media (max-width: 992px) {
+    .motor-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .motor-grid {
+      grid-template-columns: repeat(1, 1fr); 
+    .search-form input[type="text"] {
+      width: 100%; 
+    }
+    .search-form button {
+      margin-top: 10px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    header {
+      flex-direction: column;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .nav-right {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
   </style>
 </head>
 <body>
