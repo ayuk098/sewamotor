@@ -205,7 +205,7 @@ $nama = $_SESSION['nama'];
 <header>
   <a href="#" class="logo">JSRent</a>
   <div class="nav-right">
-    <a href="index.php"><i class="fas fa-home"></i> Home</a>
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
     <a href="daftarmotor.php"><i class="fas fa-motorcycle"></i> Sewa Motor</a>
     <a href="profil_customer.php" class="profile">
       <i class="fas fa-user"></i>

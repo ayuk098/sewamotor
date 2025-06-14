@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (empty($_SESSION['id_customer'])) {
-    header("Location: login.php?pesan=belum_login");
+    header("Location: login.html?pesan=belum_login");
     exit();
 }
 
@@ -17,6 +17,6 @@ $nama = $_SESSION['nama'];
 </head>
 <body>
   <h1>Selamat datang, <?= htmlspecialchars($nama) ?>!</h1>
-  <a href="logout.php">Logout</a>
+  <a href="logout.html">Logout</a>
 </body>
 </html>

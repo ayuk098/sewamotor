@@ -389,7 +389,7 @@ $show_popup = true; // Set variabel untuk menampilkan pop-up
 <header>
   <a href="#" class="logo">JSRent</a>
   <div class="nav-right">
-    <a href="index.php"><i class="fas fa-home"></i> Home</a>
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
     <a href="sewamotor.php"><i class="fas fa-motorcycle"></i> Sewa Motor</a>
     <a href="profil_customer.php" class="profile">
       <i class="fas fa-user"></i>
@@ -495,7 +495,7 @@ $show_popup = true; // Set variabel untuk menampilkan pop-up
 <script>
   function closePopup() {
     document.getElementById('popup').classList.remove('active');
-    window.location.href = 'index.php'; // Redirect ke halaman index.php
+    window.location.href = 'index.html'; // Redirect ke halaman index.php
   }
 </script>
 <script>

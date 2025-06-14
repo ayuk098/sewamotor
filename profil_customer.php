@@ -4,7 +4,7 @@ include 'koneksi.php';
 
 // Pastikan pengguna telah login
 if (!isset($_SESSION['id_customer'])) {
-    header("Location: login.php?pesan=belum_login");
+    header("Location: login.html?pesan=belum_login");
     exit();
 }
 
@@ -278,7 +278,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <header>
   <a class="logo">JSRent</a>
   <div class="nav-right">
-    <a href="index.php"><i class="fas fa-home"></i> Home</a>
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
     <a href="daftarmotor.php"><i class="fas fa-motorcycle"></i> Sewa Motor</a>
     <a href="Logout.php"><i class="fas fa-user"></i> Logout</a>
   </div>

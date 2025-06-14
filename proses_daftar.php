@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("sss", $nama, $email, $hashedPassword);
 
     if ($stmt->execute()) {
-        echo "<script>alert('Pendaftaran berhasil!'); window.location.href='login.php';</script>";
+        echo "<script>alert('Pendaftaran berhasil!'); window.location.href='login.html';</script>";
     } else {
         error_log("Registration error: " . $stmt->error);
         echo "<script>alert('Terjadi kesalahan saat pendaftaran'); window.history.back();</script>";
