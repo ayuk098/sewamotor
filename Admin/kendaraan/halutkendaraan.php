@@ -422,6 +422,5 @@ if (isset($_GET['msg'])) {
     document.getElementById('deleteIdKendaraan').value = id;
   });
 </script>
-
   </body>
 </html>
